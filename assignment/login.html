@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title> 
+	<style>
+    body
+	{
+		margin:0;
+		background-image:url(image.jpg); 
+	}
+	.main
+	{ 
+	    margin:auto;
+        height:655px;
+		width: 1000px;
+	}
+    .input
+	{
+		padding:8px;
+        display:block;
+        border:none;
+        padding: 14px 20px;
+        margin: 8px 0
+        border-bottom:2px solid #ccc;
+        width:300px;
+        background: white;
+    }
+	.btn
+	{
+		background-color:#ff9900;
+		border: none;
+		cursor: pointer;
+		padding: 12px 24px;
+	    width:300px;	
+	}
+	.btn:hover
+	{ 
+		transition-duration: 0.5s;
+		transform: translate(0px,-5px);
+		box-shadow: 10px 20px 30px black;
+	}
+    a
+    {  
+        display: block;
+        text-decoration:none;
+        color:black;
+        padding: 5px;
+	}
+	h1
+	{
+		color:#ff9900;
+	}
+	h2
+	{
+		color: #ff9900;
+	}
+	</style>
+</head>
+<body>
+	<div class="main">
+
+    <form name="form" action="" method="get" onsubmit="return myValidation()">
+    <h1> Login Form</h1><br/>
+    <b><h2>Username</h2></b>
+    <p><input class="input"  type="text" placeholder="Enter Username" name="name" ></p>
+    <b><h2>Password</h2></b>
+    <p><input class="input" type="password" placeholder="Enter Password"  name="pwd"  ></p>
+     <p> <b><h2>Account</h2></b>
+      <select class="input" id="account" name="account">
+      <option value="">---select---</option>
+      <option value="stud">Student/faculty</option>
+      <option value="staff">Staff</option>
+      <option value="Admin">Admin</option>
+      </select></p>
+      <button class="btn" type="submit" value="Submit"><a href="#">Submit </a></button>
+</div>
+<script>
+	function myValidation(){
+  	var uname=document.forms["form"]["name"].value;
+    var password=document.forms["form"]["pwd"].value;
+        var select=document.forms["form"]["account"].value;
+  	var flag=true;
+  	if(uname=="")
+  	{
+  		alert("Name Cannot be empty");
+  		flag=false;
+  	}
+  	if( password=="")
+  	{
+  		alert("Password Cannot be empty");
+  		flag=false;
+  	}
+  	if( select=="")
+  	{
+  		alert("Select Option");
+  		flag=false;
+  	}
+  	return flag;
+  }
+</script>
+</body>
+</html>
+
